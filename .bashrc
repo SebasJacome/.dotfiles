@@ -9,11 +9,14 @@ alias ls='ls --color=auto'
 alias ll='ls -al --color=auto'
 alias grep='grep --color=auto'
 alias vim='nvim'
-PS1='[\u@\h \W]\$ '
+#PS1='[\u@\h \w]\$ '
 
 
 open_in_nvim(){
 	nvim "$(fzf)"
 }
+source /usr/share/git/completion/git-prompt.sh
 
 bind -x '"\C-f": open_in_nvim'
+PS1='[\u@\h \w$(__git_ps1 " (%s)")]\$ '
+
