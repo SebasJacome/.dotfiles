@@ -33,3 +33,10 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
+
+-- Function to automatically Sync and Close Lazy Plugin Manager
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+		require("lazy").sync()
+    end,
+})
