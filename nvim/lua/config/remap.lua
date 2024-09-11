@@ -8,3 +8,6 @@ vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set("n", "<C-h>", ":noh<CR>")
+
+vim.keymap.set("n", "<C-o>", "o<Esc>k")
+vim.keymap.set("n", "<C-u>", "O<Esc>")
