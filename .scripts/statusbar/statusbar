@@ -24,7 +24,15 @@ get_ip () {
 	fastfetch | grep -m 1 Local | awk '{print $4}' | cut -d '/' -f 1
 }
 
+get_keyboard_layout() { 
+	case "$(xset -q | grep LED | awk '{ print $10 }')" in
+		"00000000" ) KBD = "us" ;;
+		"00001000" ) KBD = "intl" ;;
+		*) KBD = "unknown" ;;
+	esac
+}
+
 while :; do
-	xsetroot -name "󰣇 $(show_day)"";""$(get_ip)  $(wifi)  $(timedate) "
+	xsetroot -name "󰣇 $(show_day)"";""$(get_keyboard_layout)  $(get_ip)  $(wifi)  $(timedate) "
 	sleep 1
 done
