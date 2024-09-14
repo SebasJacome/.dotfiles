@@ -35,8 +35,18 @@ require("lazy").setup({
 })
 
 -- Function to automatically Sync and Close Lazy Plugin Manager
+--vim.api.nvim_create_autocmd("VimEnter", {
+--    callback = function()
+--		require("lazy").sync()
+--    end,
+--})
 vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
-		require("lazy").sync()
+        require("lazy").sync()
+        -- Wait a bit for the sync to finish before issuing the command
+        vim.defer_fn(function()
+            vim.cmd('q')  -- Execute the command to quit
+        end, 100)  -- Delay in milliseconds
     end,
 })
+

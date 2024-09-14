@@ -20,3 +20,4 @@ source /usr/share/git/completion/git-prompt.sh
 bind -x '"\C-f": open_in_nvim'
 PS1='[\u \w$(__git_ps1 " (%s)")]\$ '
 
+fastfetch
