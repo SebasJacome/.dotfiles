@@ -12,6 +12,7 @@ vim.opt.softtabstop = 2
 vim.opt.scrolloff = 8
 
 vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 1
 
 vim.opt.smartindent = true
 
