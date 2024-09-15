@@ -1,0 +1,5 @@
+clear Lock
+keycode 66 = Escape
+
+clear Mod4 
+keycode 133 = Meta_L
