@@ -16,6 +16,7 @@ open_in_nvim(){
 	nvim "$(fzf)"
 }
 source /usr/share/git/completion/git-prompt.sh
+source /usr/share/nvm/init-nvm.sh
 
 bind -x '"\C-f": open_in_nvim'
 PS1='[\u \w$(__git_ps1 " (%s)")]\$ '
