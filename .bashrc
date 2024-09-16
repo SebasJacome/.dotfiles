@@ -7,8 +7,11 @@
 
 alias ls='ls --color=auto'
 alias ll='ls -al --color=auto'
+alias la='ls -a --color=auto'
 alias grep='grep --color=auto'
 alias vim='nvim'
+alias ~='cd ~'
+alias ..='cd ..'
 #PS1='[\u@\h \w]\$ '
 
 
