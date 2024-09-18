@@ -16,6 +16,10 @@ vim.g.netrw_liststyle = 1
 
 vim.opt.smartindent = true
 
+vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
+vim.opt.wrap = true
+
 vim.opt.statusline = "%f     " ..           -- File path (left-aligned)
 										"%{v:lua.Mode_name()}    " ..		 -- Current mode
 										"%m" ..						 -- Displays if the file is modified
