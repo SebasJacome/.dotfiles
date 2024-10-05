@@ -1,13 +1,13 @@
-#
-# ~/.bashrc
-#
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWUPSTREAM="auto"
+HISTSIZE= HISTFILESIZE=
 
-# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-alias ll='ls -al --color=auto'
-alias la='ls -a --color=auto'
+alias ls='ls --color=auto --group-directories-first'
+alias ll='ls -al --color=auto --group-directories-first'
+alias la='ls -a --color=auto --group-directories-first'
+alias md='mkdir -pv'
 alias grep='grep --color=auto'
 alias vim='nvim'
 alias ~='cd ~'
@@ -16,7 +16,8 @@ alias ff='fastfetch --logo-color-1 reset_blink_dim_blue --logo-color-2 light_blu
 
 #PS1='[\u@\h \w]\$ '
 
-
+set -o vi
+stty -ixon
 open_in_nvim(){
 	nvim "$(fzf)"
 }
@@ -24,6 +25,6 @@ source /usr/share/git/completion/git-prompt.sh
 source /usr/share/nvm/init-nvm.sh
 
 bind -x '"\C-f": open_in_nvim'
-PS1='[\u \w$(__git_ps1 " (%s)")]\$ '
+PS1='\[\e[38;5;216m\]sj \[\e[0;34m\]\w\[\e[38;5;72m\]$(__git_ps1 " \[\e[38;5;72m\](\[\e[38;5;203m\]%s\[\e[38;5;72m\])")\[\e[0m\] \$ '
 
 ff
