@@ -1,0 +1,3 @@
+set keymap vi-insert
+"\C-l": "\C-e\C-u clear\C-m"
+
