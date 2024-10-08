@@ -2,5 +2,5 @@
 nvim/lazy-lock.json	
 .scripts/statusbar/battery
 .scripts/statusbar/volume
-suckless/dwm/dwm.o
+.scripts/keyboard-layout/
 
