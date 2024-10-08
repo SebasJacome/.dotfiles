@@ -39,3 +39,10 @@ vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end)
 
 -- Format
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+-- Close Terminal Mode and Move to Previous window
+vim.keymap.set('t', '<C-q>', "<C-\\><C-n><C-w>h",{silent = true})
+
+-- Open a Vertical Window with a Terminal in it
+vim.api.nvim_set_keymap('n', '<C-w>m', ':vsplit<CR><C-w>w:term<CR>i', { noremap = true, silent = true })
+
