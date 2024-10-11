@@ -26,8 +26,19 @@ stty -ixon
 open_in_nvim(){
 	nvim "$(fzf)"
 }
+
+append_path () {
+    case ":$PATH:" in
+        *:"$1":*)
+            ;;
+        *)
+            PATH="${PATH:+$PATH:}$1"
+    esac
+}
+
 source /usr/share/git/completion/git-prompt.sh
 source /usr/share/nvm/init-nvm.sh
+
 
 bind -x '"\C-f": open_in_nvim'
 PS1='\[\e[38;5;216m\]sj \[\e[0;34m\]\w\[\e[38;5;72m\]$(__git_ps1 " \[\e[38;5;72m\](\[\e[38;5;203m\]%s\[\e[38;5;72m\])")\[\e[0m\] \$ '
