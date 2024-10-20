@@ -45,3 +45,4 @@ PS1='\[\e[38;5;216m\]sj \[\e[0;34m\]\w\[\e[38;5;72m\]$(__git_ps1 " \[\e[38;5;72m
 
 ff
 . "$HOME/.cargo/env"
+. "/home/sjacome/.deno/env"
