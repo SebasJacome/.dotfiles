@@ -17,6 +17,9 @@ alias ff='fastfetch --logo-color-1 reset_blink_dim_blue --logo-color-2 light_blu
 alias mv='mv -v'
 alias cp='cp -v'
 alias rm='rm -v'
+alias asdf='setxkbmap -layout us,us -variant ,intl -option grp:ctrl_space_toggle
+'
+
 
 #PS1='[\u@\h \w]\$ '
 
