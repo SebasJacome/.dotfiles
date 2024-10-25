@@ -19,6 +19,8 @@
 (global-set-key (kbd "M-x") 'smex)
 (setq split-width-threshold nil)
 (setq split-height-threshold 0)
+(setq vc-follow-symlinks nil)
+(setq create-lockfiles nil)
 
 
 

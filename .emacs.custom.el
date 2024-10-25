@@ -8,7 +8,7 @@
    '("e13beeb34b932f309fb2c360a04a460821ca99fe58f69e65557d6c1b10ba18c7" default))
  '(display-line-numbers-type 'relative)
  '(inhibit-startup-screen t)
- '(package-selected-packages '(smex magit gruber-darker-theme))
+ '(package-selected-packages '(lsp-mode typescript-mode smex magit gruber-darker-theme))
  '(tab-width 4))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
