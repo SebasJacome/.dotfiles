@@ -9,6 +9,9 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set("n", "<C-h>", ":noh<CR>")
 
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
 vim.keymap.set("n", "<C-o>", "o<Esc>k")
 vim.keymap.set("n", "<C-l>", "O<Esc>")
 
