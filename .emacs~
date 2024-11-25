@@ -16,7 +16,7 @@
 (ido-everywhere 1)
 (global-display-line-numbers-mode)
 (global-unset-key (kbd "C-z"))
-(global-set-key (kbd "M-x") 'smex)
+;;(global-set-key (kbd "M-x") 'smex)
 (setq split-width-threshold nil)
 (setq split-height-threshold 0)
 (setq vc-follow-symlinks nil)
