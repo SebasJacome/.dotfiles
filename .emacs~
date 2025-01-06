@@ -7,7 +7,7 @@
 
 (package-initialize)
 
-(add-to-list 'default-frame-alist `(font . "Iosevka Subtle-20"))
+(add-to-list 'default-frame-alist `(font . "IosevkaSubtle-20"))
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
@@ -16,12 +16,20 @@
 (ido-everywhere 1)
 (global-display-line-numbers-mode)
 (global-unset-key (kbd "C-z"))
+<<<<<<< HEAD
 ;;(global-set-key (kbd "M-x") 'smex)
+=======
+(global-set-key (kbd "M-x") 'smex)
+>>>>>>> 4e8ac04 (general changes)
 (setq split-width-threshold nil)
 (setq split-height-threshold 0)
 (setq vc-follow-symlinks nil)
 (setq create-lockfiles nil)
+<<<<<<< HEAD
 
+=======
+(setq make-backup-files nil) ;; do not make backup files
+>>>>>>> 4e8ac04 (general changes)
 
 
 

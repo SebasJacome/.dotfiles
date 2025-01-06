@@ -21,8 +21,26 @@
 (setq split-height-threshold 0)
 (setq vc-follow-symlinks nil)
 (setq create-lockfiles nil)
+(setq make-backup-files nil) ;; do not make backup file
+(with-eval-after-load 'lsp-mode
+  (setq lsp-headerline-breadcrumb-enable nil))
+(global-eldoc-mode -1)
+(with-eval-after-load 'lsp-mode
+  (setq lsp-eldoc-enable-hover nil))
 
 
+
+(use-package lsp-mode
+  :ensure t
+  :init
+  (setq lsp-keymap-prefix "C-c l") ;; Optional keybinding prefix
+  :hook
+  ((simpc-mode c-mode c++-mode python-mode typescript-mode go-mode rust-mode) . lsp-deferred) ;; Add your desired major modes
+  :commands (lsp lsp-deferred))
+
+(use-package lsp-ui
+  :ensure t
+  :commands lsp-ui-mode)
 
 
 (load-file custom-file)
