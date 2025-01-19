@@ -4,11 +4,11 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 ;; Use simpc-mode for C files
-(require 'simpc-mode)
+(require simpc-mode)
 (add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
 
 ;; Use js2-mode for JavaScript files
-(require 'js2-mode)
+(require js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 (package-initialize)
@@ -51,7 +51,6 @@
 
 (load-file custom-file)
 (move-text-default-bindings)
-
 ; Configuring the lsp for simp-c mode
 (add-hook 'simpc-mode-hook #'lsp)
 (with-eval-after-load 'lsp-mode
