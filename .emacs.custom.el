@@ -9,7 +9,7 @@
  '(display-line-numbers-type 'relative)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(python-mode lsp-ui go-mode rust-mode lsp-mode typescript-mode smex magit gruber-darker-theme))
+   '(js2-mode move-text go-mode rust-mode lsp-mode typescript-mode smex magit gruber-darker-theme))
  '(tab-width 4)
  '(warning-suppress-types '((lsp-mode))))
 (custom-set-faces

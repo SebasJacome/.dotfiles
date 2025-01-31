@@ -3,4 +3,6 @@ keycode 66 = Alt_L
 keycode 134 = Alt_R
 remove mod1 = Alt_R
 remove mod4 = Alt_R
+remove mod1 = Alt_L
+remove mod1 = Meta_L
 add mod5 = Alt_R
