@@ -17,11 +17,13 @@ alias ff='fastfetch --logo-color-1 reset_blink_dim_blue --logo-color-2 light_blu
 alias mv='mv -v'
 alias cp='cp -v'
 alias rm='rm -v'
-alias asdf='setxkbmap -layout us,us -variant ,intl -option grp:alt_space_toggle && xmodmap ~/.Xmodmap'
+alias asdf='setxkbmap -layout us,us -variant ,intl -option grp:alt_space_toggle'
+alias xmod='xmodmap .Xmodmap'
 alias ddisplay='xrandr --output HDMI-2 --left-of eDP-1 --auto && ~/.fehbg'
 alias odisplay='xrandr --output eDP-1 --off --output HDMI-2 --auto && ~/.fehbg'
 alias fehbg='feh --no-fehbg --bg-fill'
 alias shot='flameshot & disown && flameshot gui'
+alias copa='xmodmap -e "add mod1 = Alt_L"'
 
 #PS1='[\u@\h \w]\$ '
 
@@ -44,6 +46,7 @@ append_path () {
 source /usr/share/git/completion/git-prompt.sh
 source /usr/share/nvm/init-nvm.sh
 
+export PATH=$PATH:~/.local/bin
 
 bind -x '"\C-f": open_in_nvim'
 PS1='\[\e[38;5;216m\]sj \[\e[0;34m\]\w\[\e[38;5;72m\]$(__git_ps1 " \[\e[38;5;72m\](\[\e[38;5;203m\]%s\[\e[38;5;72m\])")\[\e[0m\] \$ '
@@ -51,3 +54,5 @@ PS1='\[\e[38;5;216m\]sj \[\e[0;34m\]\w\[\e[38;5;72m\]$(__git_ps1 " \[\e[38;5;72m
 ff
 . "$HOME/.cargo/env"
 . "/home/sjacome/.deno/env"
+
+

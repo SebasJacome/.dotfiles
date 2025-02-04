@@ -11,6 +11,8 @@
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
+(xclip-mode 1) ;; Link kill-ring and clipboard
+
 (package-initialize)
 
 (add-to-list 'default-frame-alist `(font . "Iosevka Subtle-20"))
@@ -29,12 +31,11 @@
 (setq create-lockfiles nil)
 (setq make-backup-files nil) ;; do not make backup file
 (with-eval-after-load 'lsp-mode
-  (setq lsp-headerline-breadcrumb-enable nil))
-(global-eldoc-mode -1)
-(with-eval-after-load 'lsp-mode
-  (setq lsp-eldoc-enable-hover nil))
+  (setq lsp-headerline-breadcrumb-enable nil)) ;; Eliminates breadcrumbs on top of the program
 
-
+;;(with-eval-after-load 'lsp-mode
+;;  (setq lsp-eldoc-enable-hover nil))
+(setq lsp-signature-auto-activate nil)
 
 (use-package lsp-mode
   :ensure t
@@ -46,7 +47,7 @@
 
 (use-package lsp-ui
   :ensure t
-  :commands lsp-ui-mode)
+  :commands lsp-ui-mode) ;; Jump to definition of functions
 
 
 (load-file custom-file)
