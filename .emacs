@@ -11,6 +11,13 @@
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
+;; Use ts-mode for TS files
+(require 'typescript-mode)
+(add-to-list 'auto-mode-alist '("\\.\\(m\\|c\\)?ts\\'" . typescript-mode))
+(add-to-list 'auto-mode-alist '("\\.mts\\'" . typescript-mode))
+;;(add-hook 'typescript-mode-hook #'lsp)
+;;(add-hook 'typescript-ts-mode-hook #'lsp)
+
 (xclip-mode 1) ;; Link kill-ring and clipboard
 
 (package-initialize)
@@ -28,7 +35,7 @@
 (setq split-width-threshold nil)
 (setq split-height-threshold 0)
 (setq vc-follow-symlinks nil)
-(setq create-lockfiles nil)
+(setq create-lockfiles nil) ;; eliminate garbage file creation
 (setq make-backup-files nil) ;; do not make backup file
 (with-eval-after-load 'lsp-mode
   (setq lsp-headerline-breadcrumb-enable nil)) ;; Eliminates breadcrumbs on top of the program
@@ -62,3 +69,6 @@
     :new-connection (lsp-stdio-connection "clangd")
     :major-modes '(simpc-mode)
     :server-id 'clangd)))
+
+(global-set-key (kbd "M-p") 'move-text-up)
+(global-set-key (kbd "M-n") 'move-text-down)

@@ -5,11 +5,12 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(gruber-darker))
  '(custom-safe-themes
-   '("e13beeb34b932f309fb2c360a04a460821ca99fe58f69e65557d6c1b10ba18c7" default))
+   '("01a9797244146bbae39b18ef37e6f2ca5bebded90d9fe3a2f342a9e863aaa4fd" "e13beeb34b932f309fb2c360a04a460821ca99fe58f69e65557d6c1b10ba18c7" default))
  '(display-line-numbers-type 'relative)
+ '(ein:output-area-inlined-images t)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(xclip js2-mode move-text go-mode rust-mode lsp-mode typescript-mode smex magit gruber-darker-theme))
+   '(ein org company tide typescript-mode xclip smex python-mode move-text magit lsp-ui js2-mode gruber-darker-theme))
  '(tab-width 4)
  '(warning-suppress-types '((lsp-mode))))
 (custom-set-faces
