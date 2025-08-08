@@ -1,6 +1,7 @@
 require('config.functions')
 
 vim.opt.guicursor = ""
+vim.opt.termguicolors = true
 
 vim.opt.nu = true
 vim.opt.relativenumber = true

@@ -80,6 +80,7 @@ static const char *kbdtogglecmd[] = {"sh", "-c", "setxkbmap -query | grep -q 'us
 static const char *testcmdtoggle[] = {"xdotool", "key", "Shitf+Alt_R", NULL};
 
 #include "movestack.c"
+#include <X11/XF86keysym.h>
 static Key keys[] = {
 	/* modifier                     key        function        argument */
     { MODKEY,                       XK_9,  spawn,          {.v = kbdtogglecmd} },
@@ -120,6 +121,15 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
   { MODKEY|ShiftMask,			        XK_s,  spawn,	   {.v = prtscr} },
   { MODKEY,			        XK_s,  spawn,	   {.v = prtselectedscr} },
+    { 0, XF86XK_AudioMute, spawn, SHCMD("amixer set Master toggle") },
+	{ 0, XF86XK_AudioLowerVolume, spawn, SHCMD("amixer set Master 5%-") },
+	{ 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("amixer set Master 5%+") },
+	/* Brightness control with brightnessctl */
+	{ 0, XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl set 5%-") },
+	{ 0, XF86XK_MonBrightnessUp, spawn, SHCMD("brightnessctl set +5%") },
+	/* Keybinding for layout toggle */
+	{ 0, XK_F9, spawn, SHCMD("~/.scripts/keyboard-layout/toggle_layout.sh") },
+    { 0, XK_Print, spawn, SHCMD("~/.scripts/shot") },
 };
 
 /* button definitions */

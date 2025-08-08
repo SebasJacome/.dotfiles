@@ -1,4 +1,3 @@
-
 picom &
 xset s off -dpms
 ~/.scripts/statusbar/statusbar &
