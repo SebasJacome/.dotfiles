@@ -76,11 +76,13 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *prtscr[] = {"sh", "-c", "maim | xclip -selection clipboard -t image/png", NULL};
 static const char *prtselectedscr[] = {"sh", "-c", "maim -soq | xclip -selection clipboard -t image/png", NULL};
-
+static const char *kbdtogglecmd[] = {"sh", "-c", "setxkbmap -query | grep -q 'us_intl' && setxkbmap us || setxkbmap us_intl", NULL};
+static const char *testcmdtoggle[] = {"xdotool", "key", "Shitf+Alt_R", NULL};
 
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+    { MODKEY,                       XK_9,  spawn,          {.v = kbdtogglecmd} },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
@@ -115,7 +117,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_6,                      5)
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
   { MODKEY|ShiftMask,			        XK_s,  spawn,	   {.v = prtscr} },
   { MODKEY,			        XK_s,  spawn,	   {.v = prtselectedscr} },

@@ -1,3 +1,5 @@
+
+
 (setq custom-file "~/.emacs.custom.el")
 (add-to-list 'load-path "~/.emacs.local/")
 (require 'package)
@@ -16,12 +18,16 @@
 (ido-everywhere 1)
 (global-display-line-numbers-mode)
 (global-unset-key (kbd "C-z"))
-;;(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-x") 'smex)
 (setq split-width-threshold nil)
 (setq split-height-threshold 0)
 (setq vc-follow-symlinks nil)
 (setq create-lockfiles nil)
 
+(with-eval-after-load 'ein-cell
+  (defun my-ein-disable-syntax-propertize ()
+    (setq-local syntax-propertize-function (lambda (start end) nil)))
+  (add-hook 'ein:markdown-mode-hook #'my-ein-disable-syntax-propertize))
 
 
 

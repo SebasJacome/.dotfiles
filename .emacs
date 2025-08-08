@@ -1,3 +1,5 @@
+
+
 (setq custom-file "~/.emacs.custom.el")
 (add-to-list 'load-path "~/.emacs.local/")
 (require 'package)
@@ -21,7 +23,6 @@
 (setq split-height-threshold 0)
 (setq vc-follow-symlinks nil)
 (setq create-lockfiles nil)
-
 
 
 
