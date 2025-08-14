@@ -1,5 +1,3 @@
-
-
 (setq custom-file "~/.emacs.custom.el")
 (add-to-list 'load-path "~/.emacs.local/")
 (require 'package)
