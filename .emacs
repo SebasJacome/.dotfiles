@@ -71,3 +71,9 @@
 
 (global-set-key (kbd "M-p") 'move-text-up)
 (global-set-key (kbd "M-n") 'move-text-down)
+
+
+(with-eval-after-load 'shr
+  (defun shr-tag-html (dom)
+    "Fallback handler for <html> tags in EIN/eww rendering."
+    (shr-generic dom)))

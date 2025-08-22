@@ -18,6 +18,7 @@
  *
  * To understand everything else, start reading main().
  */
+#include <time.h>
 #include <errno.h>
 #include <locale.h>
 #include <signal.h>
@@ -197,6 +198,7 @@ static void resizeclient(Client *c, int x, int y, int w, int h);
 static void resizemouse(const Arg *arg);
 static void restack(Monitor *m);
 static void run(void);
+static void savescreenshot(const Arg *arg);
 static void scan(void);
 static int sendevent(Client *c, Atom proto);
 static void sendmon(Client *c, Monitor *m);
@@ -2339,6 +2341,22 @@ zoom(const Arg *arg)
 		if (!c || !(c = nexttiled(c->next)))
 			return;
 	pop(c);
+}
+
+static void 
+savescreenshot(const Arg *arg)
+{
+    char command[64];
+    time_t now = time(NULL);
+
+    struct tm *t = localtime(&now);
+
+    sprintf(command, "/home/sjacome/Screenshots/%ld.png", now);
+
+    if (fork() == 0) {
+        execlp("maim", "maim", "-soq", command, (char *)NULL);
+        _exit(1);
+    }
 }
 
 int

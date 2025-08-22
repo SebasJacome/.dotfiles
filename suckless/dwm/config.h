@@ -33,7 +33,7 @@ static const unsigned int alphas[][3]      = {
 
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "󰤽", };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6"};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -74,10 +74,11 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_cyan, "-nf", col_gray2, "-sb", col_gray3, "-sf", col_cyan, NULL };
 static const char *termcmd[]  = { "st", NULL };
+// static const char *prtwscr[] = {"sh", "-c", 'maim -soq /home/sjacome/Screenshots/$(date +%s).png'};
+//static const char *prtwscrtest[] = {"maim", "-soq", get_date()};
 static const char *prtscr[] = {"sh", "-c", "maim | xclip -selection clipboard -t image/png", NULL};
 static const char *prtselectedscr[] = {"sh", "-c", "maim -soq | xclip -selection clipboard -t image/png", NULL};
 static const char *kbdtogglecmd[] = {"sh", "-c", "setxkbmap -query | grep -q 'us_intl' && setxkbmap us || setxkbmap us_intl", NULL};
-static const char *testcmdtoggle[] = {"xdotool", "key", "Shitf+Alt_R", NULL};
 
 #include "movestack.c"
 #include <X11/XF86keysym.h>
@@ -120,6 +121,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
   { MODKEY|ShiftMask,			        XK_s,  spawn,	   {.v = prtscr} },
+    {MODKEY,                XK_c,  savescreenshot,      {0} },
   { MODKEY,			        XK_s,  spawn,	   {.v = prtselectedscr} },
     { 0, XF86XK_AudioMute, spawn, SHCMD("amixer set Master toggle") },
 	{ 0, XF86XK_AudioLowerVolume, spawn, SHCMD("amixer set Master 5%-") },
