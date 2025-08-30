@@ -13,7 +13,6 @@ precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '(%b)'
 setopt prompt_subst
 
-set -o vi
 
 function open_in_nvim() {
     { local file=$(command fzf) } < /dev/tty
@@ -37,5 +36,5 @@ alias ff='fastfetch'
 alias python="python3"
 
 bindkey '^F' open_in_nvim_widget
-PS1='%F{216}sj %F{blue}%~%F{72}${vcs_info_msg_0_}%f \$ '
+PS1='%F{216}sj %F{blue}%1~%F{72} ${vcs_info_msg_0_}%f \$ '
 
