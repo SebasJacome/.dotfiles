@@ -1,3 +1,5 @@
+
+
 (setq custom-file "~/.emacs.custom.el")
 (add-to-list 'load-path "~/.emacs.local/")
 (require 'package)
@@ -34,6 +36,10 @@
 (with-eval-after-load 'lsp-mode
   (setq lsp-eldoc-enable-hover nil))
 
+(with-eval-after-load 'ein-cell
+  (defun my-ein-disable-syntax-propertize ()
+    (setq-local syntax-propertize-function (lambda (start end) nil)))
+  (add-hook 'ein:markdown-mode-hook #'my-ein-disable-syntax-propertize))
 
 
 (use-package lsp-mode

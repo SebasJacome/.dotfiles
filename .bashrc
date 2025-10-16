@@ -27,8 +27,7 @@ alias copa='xmodmap -e "add mod1 = Alt_L"'
 
 #PS1='[\u@\h \w]\$ '
 
-set -o vi
-bind -f ~/.inputrc
+#bind -f ~/.inputrc
 stty -ixon
 open_in_nvim(){
 	nvim "$(fzf)"
@@ -51,7 +50,6 @@ export PATH=$PATH:~/.local/bin
 bind -x '"\C-f": open_in_nvim'
 PS1='\[\e[38;5;216m\]sj \[\e[0;34m\]\w\[\e[38;5;72m\]$(__git_ps1 " \[\e[38;5;72m\](\[\e[38;5;203m\]%s\[\e[38;5;72m\])")\[\e[0m\] \$ '
 
-ff
 . "$HOME/.cargo/env"
 . "/home/sjacome/.deno/env"
 

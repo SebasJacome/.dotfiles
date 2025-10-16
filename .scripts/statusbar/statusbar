@@ -33,7 +33,16 @@ get_keyboard_layout () {
 	esac
 }
 
+get_keyboard_layout_updated () {
+    layout_id=$(setxkbmap -query | grep layout | awk ' { print $2 } ')
+    case $layout_id in
+        "us" ) echo "us" ;;
+        "us_intl" ) echo "intl" ;;
+        *) echo "unknown" ;;
+    esac
+}
+
 while :; do
-	xsetroot -name "󰣇 $(show_day)"";"" $(get_ip)  $(get_keyboard_layout)  $(wifi)  $(timedate) "
+	xsetroot -name "󰣇 $(show_day)"";"" $(get_ip)  $(get_keyboard_layout_updated)  $(wifi)  $(timedate) "
 	sleep 1
 done

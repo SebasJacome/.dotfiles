@@ -20,7 +20,7 @@ return {
         name = 'gruber-darker',
         config = function(_, opts)
             require('gruber-darker').setup(opts)
-            vim.cmd('colorscheme vague')
+            vim.cmd('colorscheme gruber-darker')
         end
     },
     {
