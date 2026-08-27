@@ -1,0 +1,5 @@
+wallpaper {
+    monitor = DP-6
+    path = ~/Pictures/black.png
+    fit_mode=cover
+}
