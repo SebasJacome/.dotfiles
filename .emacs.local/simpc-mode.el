@@ -1,3 +1,5 @@
+;; -*- lexical-binding: nil -*- 
+
 (require 'subr-x)
 
 (defvar simpc-mode-syntax-table
@@ -109,3 +111,5 @@
   (setq-local comment-start "// "))
 
 (provide 'simpc-mode)
+
+;; -*- lexical-binding: nil; -*- 

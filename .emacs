@@ -1,3 +1,5 @@
+;; -*- lexical-binding: nil -*- 
+
 (setq custom-file "~/.emacs.custom.el")
 (add-to-list 'load-path "~/.emacs.local/")
 (require 'package)
@@ -22,7 +24,7 @@
 
 (package-initialize)
 
-(add-to-list 'default-frame-alist `(font . "Iosevka Subtle-20"))
+(add-to-list 'default-frame-alist `(font . "Iosevka-20"))
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
